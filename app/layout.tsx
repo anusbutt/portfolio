@@ -8,11 +8,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Anus Yousuf — I Build AI Agents That Run Real Businesses",
+  title: "Anus Yousuf — I Build AI Agents & AI-Integrated Websites That Run Real Businesses",
   description:
     "Portfolio of Anus Yousuf — AI engineer from Karachi building agentic systems that automate real business workflows.",
   openGraph: {
-    title: "Anus Yousuf — I Build AI Agents That Run Real Businesses",
+    title: "Anus Yousuf — I Build AI Agents & AI-Integrated Websites That Run Real Businesses",
     description:
       "Portfolio of Anus Yousuf — AI engineer from Karachi building agentic systems that automate real business workflows.",
     type: "website",

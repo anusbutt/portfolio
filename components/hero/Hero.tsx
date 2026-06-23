@@ -57,7 +57,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          I Build AI Agents That Run Real Businesses
+          I Build AI Agents &amp; AI-Integrated Websites That Run Real Businesses
         </motion.p>
 
         <motion.div
