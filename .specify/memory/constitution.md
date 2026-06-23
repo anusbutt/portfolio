@@ -1,55 +1,62 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Anus Yousuf Portfolio Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Clarity Over Cleverness
+Code must be readable and self-documenting. Prefer explicit, straightforward implementations. Every component and function should have a single, obvious purpose. Complex abstractions must be justified with a comment explaining why a simpler approach was insufficient.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Mobile-First, Always
+Every UI component must be designed mobile-first. Responsive breakpoints are progressive enhancements, not afterthoughts. Touch targets, font sizes, and spacing must work on small screens before being adapted for larger viewports.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Performance as a Feature
+The portfolio must load fast and run smooth. Lazy load heavy dependencies (3D scene, animations). Respect `prefers-reduced-motion`. Optimize images and assets. No render-blocking resources in the critical path. Target: <3s LCP on 4G.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Accessibility is Non-Negotiable
+Semantic HTML, proper ARIA labels, keyboard navigation, sufficient color contrast (WCAG AA minimum). The site must be usable without JavaScript where possible. Screen reader friendly. Focus management for interactive elements.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. No Secrets in Code
+All API keys, tokens, and sensitive configuration must live in environment variables (`.env`). Never hardcode credentials. The `.env.example` file documents required variables without exposing values.
 
-### [PRINCIPLE_6_NAME]
+### VI. Smallest Viable Change
+Each commit and PR should be the smallest change that delivers value and passes checks. No unrelated refactors. No "while I'm here" changes. If it's not in the spec, it doesn't get built.
 
+## Design Constraints
 
-[PRINCIPLE__DESCRIPTION]
+- **Background**: `#0a0a0a` (pure dark)
+- **Primary text**: `#ffffff` (white)
+- **Accent**: `#f97316` (orange, used sparingly — max 10% of visual weight)
+- **No stock photos, no AI brain graphics, no generic templates**
+- **No progress bars for skills** — use tag cloud instead
+- **Reduced motion**: All animations must respect `prefers-reduced-motion: reduce`
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technology Standards
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- **Framework**: Next.js 14 (App Router) with TypeScript
+- **Styling**: Tailwind CSS (no custom CSS files unless absolutely necessary)
+- **Animations**: Framer Motion (with reduced motion support)
+- **3D**: React Three Fiber + Drei (lazy loaded, dissolves on scroll)
+- **Email**: Resend API for contact form
+- **Deployment**: Vercel (implied by Next.js)
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Code Quality Standards
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- **TypeScript**: Strict mode enabled. No `any` types without justification comment.
+- **Components**: Functional components with explicit prop types (interfaces, not type aliases for props)
+- **File naming**: PascalCase for components, camelCase for utilities, kebab-case for page routes
+- **Imports**: Use `@/` path alias for src-relative imports
+- **Error handling**: All API routes must have try/catch with proper HTTP status codes
+- **Loading states**: All async operations must have loading/error states
+
+## Security Requirements
+
+- Environment variables for all secrets (RESEND_API_KEY)
+- Input validation on contact form (server-side)
+- Rate limiting consideration for API routes
+- No eval(), no dangerouslySetInnerHTML without sanitization
+- Content Security Policy headers recommended
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other practices. Amendments require documentation and approval. All code changes must verify compliance with these principles. Complexity must be justified — when in doubt, choose the simpler approach.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-06-23 | **Last Amended**: 2026-06-23
