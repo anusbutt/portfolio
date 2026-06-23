@@ -18,7 +18,7 @@ export const projects: Project[] = [
   {
     name: "Commit Voice",
     description:
-      "Automated GitHub-to-social-media pipeline that transforms commit messages into engaging social posts.",
+      "Automated GitHub-to-social-media pipeline with human review via Slack dashboard.",
     techStack: ["Next.js", "Eve", "NeonDB", "Slack"],
     githubUrl: "https://github.com/anusbutt/commit-voice",
   },

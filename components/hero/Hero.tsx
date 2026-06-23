@@ -89,12 +89,23 @@ export default function Hero() {
         transition={{ delay: 1.5, duration: 0.6 }}
       >
         <motion.div
-          className="h-10 w-6 rounded-full border-2 border-gray-500 p-1"
+          className="flex h-10 w-6 flex-col items-center justify-start rounded-full border-2 border-gray-500 p-1"
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="h-2 w-1.5 rounded-full bg-gray-400 mx-auto" />
+          <motion.div
+            className="h-2 w-1.5 rounded-full bg-accent"
+            animate={{ opacity: [1, 0.3, 1], scale: [1, 0.8, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
         </motion.div>
+        <motion.p
+          className="mt-2 text-xs text-gray-500"
+          animate={{ opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          scroll
+        </motion.p>
       </motion.div>
     </section>
   );

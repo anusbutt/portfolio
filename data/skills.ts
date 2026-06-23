@@ -16,7 +16,6 @@ export const skillCategories: SkillCategory[] = [
     name: "AI Agent Development",
     skills: [
       "Claude API",
-      "OpenAI Agents SDK",
       "Eve Agent Framework",
       "OpenRouter",
       "Cohere",
