@@ -12,12 +12,17 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: "LinkedIn",
-    url: "https://linkedin.com/in/anus-yousuf",
+    url: "https://www.linkedin.com/in/anus-yousuf/",
     label: "linkedin.com/in/anus-yousuf",
   },
   {
     platform: "X",
     url: "https://x.com/iamanusbutt",
     label: "@iamanusbutt",
+  },
+  {
+    platform: "Omniveer",
+    url: "https://www.omniveer.com/",
+    label: "omniveer.com",
   },
 ];

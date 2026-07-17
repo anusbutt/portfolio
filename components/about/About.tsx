@@ -19,6 +19,19 @@ function SocialIcon({ platform }: { platform: string }) {
       </svg>
     );
   }
+  if (platform === "Omniveer") {
+    return (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" strokeWidth={2} />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
+        />
+      </svg>
+    );
+  }
   // X / Twitter
   return (
     <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -40,15 +53,18 @@ export default function About() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-lg leading-relaxed text-gray-300 md:text-xl">
-            I&apos;m a self-taught AI engineer from Karachi building agentic systems
-            in public. I specialize in the 10-80-10 model — 10% direction, 80%
-            agent builds, 10% validation. Currently building a vertical AI agent
-            agency starting with home service businesses.
+          <p className="text-lg leading-relaxed text-gray-300">
+            I build end-to-end AI workers: Python and FastAPI backends, Next.js
+            interfaces, APIs and databases, tool integrations, structured
+            instructions, human approval steps, and reliable workflows that keep
+            running after launch.
           </p>
 
-          <p className="mt-4 text-lg leading-relaxed text-gray-300 md:text-xl">
-            I build agentic AI systems that automate real business workflows.
+          <p className="mt-4 text-lg leading-relaxed text-gray-300">
+            The point is not another generic chatbot. It is systems that solve
+            specific business problems — qualifying leads, running outbound,
+            coordinating operations — while keeping humans in control of the
+            actions that matter.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">

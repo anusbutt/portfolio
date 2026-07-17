@@ -8,7 +8,7 @@ export default function Projects() {
   return (
     <section id="projects" className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading title="Projects" />
+        <SectionHeading title="Selected Projects" />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (

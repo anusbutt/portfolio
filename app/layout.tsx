@@ -9,13 +9,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Anus Yousuf — I Build AI Agents & AI-Integrated Websites That Run Real Businesses",
+  title: "Anus Butt — AI Engineer & Founder of Omniveer",
   description:
-    "Portfolio of Anus Yousuf — AI engineer from Karachi building agentic systems that automate real business workflows.",
+    "I build AI workers for real businesses. AI engineer and founder of Omniveer, building practical AI systems that qualify leads, automate outbound workflows, and keep humans in control.",
   openGraph: {
-    title: "Anus Yousuf — I Build AI Agents & AI-Integrated Websites That Run Real Businesses",
+    title: "Anus Butt — AI Engineer & Founder of Omniveer",
     description:
-      "Portfolio of Anus Yousuf — AI engineer from Karachi building agentic systems that automate real business workflows.",
+      "I build AI workers for real businesses. Practical AI systems that qualify leads, automate outbound workflows, and keep humans in control.",
     type: "website",
   },
 };

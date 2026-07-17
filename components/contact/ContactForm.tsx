@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { socialLinks } from "@/data/socials";
 
 interface FormErrors {
   name?: string;
@@ -78,6 +79,11 @@ export default function ContactForm() {
     <section id="contact" className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-2xl">
         <SectionHeading title="Contact" />
+
+        <p className="mt-4 text-lg leading-relaxed text-gray-400">
+          Have a business workflow that should be handled by an AI worker?
+          Let&apos;s talk.
+        </p>
 
         <motion.form
           className="mt-12 space-y-6"
@@ -214,6 +220,20 @@ export default function ContactForm() {
             </p>
           )}
         </motion.form>
+
+        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          {socialLinks.map((link) => (
+            <a
+              key={link.platform}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark"
+            >
+              {link.platform}
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
