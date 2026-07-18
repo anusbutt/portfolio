@@ -11,7 +11,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Anus Butt",
-  jobTitle: "AI Engineer",
+  jobTitle: "Full-stack Developer and AI Engineer",
   address: { "@type": "PostalAddress", addressCountry: "Pakistan" },
   worksFor: {
     "@type": "Organization",

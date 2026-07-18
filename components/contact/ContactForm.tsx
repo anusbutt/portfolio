@@ -81,14 +81,14 @@ export default function ContactForm() {
       <div className="relative mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="06 / Contact"
-          title="Have a workflow that AI should handle?"
-          description="Tell me where the work slows down, what needs judgment, and what a useful outcome looks like."
+          title="Need a website, software system, or AI-powered workflow?"
+          description="Tell me what you are building, where the current process slows down, and what a successful result should look like. I can help turn it into a complete, production-ready system."
         />
 
         <div className="mt-14 grid border-t border-white/[0.09] pt-10 md:grid-cols-[0.65fr_1.35fr] md:gap-16 lg:mt-20 lg:gap-24 lg:pt-14">
           <div>
             <p className="max-w-sm text-lg leading-8 text-stone-300">
-              Let&apos;s talk about a practical system, not another generic chatbot.
+              Let&apos;s turn the requirement into a clear, reliable product.
             </p>
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">Find me online</p>
             <div className="mt-4 flex flex-col items-start gap-2">

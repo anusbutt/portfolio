@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
@@ -43,8 +44,15 @@ export default function Navbar() {
           className="group inline-flex items-center gap-3 rounded-sm"
           aria-label="Anus Butt, back to top"
         >
-          <span className="grid h-8 w-8 place-items-center bg-stone-100 text-xs font-bold tracking-tight text-stone-950 transition-colors group-hover:bg-accent">
-            AB
+          <span className="relative h-8 w-8 shrink-0 overflow-hidden border border-white/15 bg-stone-900">
+            <Image
+              src="/Gemini_Generated_Image_6yaihi6yaihi6yai.jpg"
+              alt=""
+              fill
+              priority
+              sizes="32px"
+              className="origin-[50%_30%] scale-[1.8] object-cover object-center transition-transform duration-300 group-hover:scale-[1.9]"
+            />
           </span>
           <span className="hidden text-sm font-medium tracking-tight text-stone-200 sm:block">
             Anus Butt

@@ -46,8 +46,8 @@ export default function About() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="01 / About"
-          title="Engineering AI systems from idea to operation."
-          description="I work across the full product surface—from agent behavior and backend services to the interface where people stay in control."
+          title="Building complete digital products from interface to infrastructure."
+          description="Full-stack web development and applied AI, treated as one complete product discipline."
         />
 
         <motion.div
@@ -77,17 +77,14 @@ export default function About() {
 
           <div className="max-w-3xl">
             <p className="text-xl leading-8 text-stone-200 sm:text-2xl sm:leading-9">
-              I build end-to-end AI workers: Python and FastAPI backends, Next.js
-              interfaces, APIs and databases, tool integrations, structured
-              instructions, human approval steps, and reliable workflows that keep
-              running after launch.
+              I build full-stack websites, dashboards, internal tools, SaaS products,
+              and AI-integrated systems.
             </p>
 
             <p className="mt-6 text-base leading-8 text-stone-400">
-              The point is not another generic chatbot. It is systems that solve
-              specific business problems—qualifying leads, running outbound, and
-              coordinating operations—while keeping humans in control of the
-              actions that matter.
+              I work across the full product surface—from responsive Next.js
+              interfaces and backend APIs to databases, automation, deployment, and
+              the AI layer when it adds real value.
             </p>
           </div>
         </motion.div>

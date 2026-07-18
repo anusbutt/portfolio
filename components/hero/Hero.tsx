@@ -17,17 +17,18 @@ export default function Hero() {
         >
           <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
             <span className="h-px w-8 bg-accent" aria-hidden="true" />
-            AI Engineer &amp; Founder of Omniveer
+            Full-stack Developer, AI Engineer &amp; Founder of Omniveer
           </p>
 
           <h1 className="text-balance mt-7 max-w-5xl text-[clamp(3.25rem,8vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-stone-100">
-            I build AI workers for <span className="text-stone-500">real businesses.</span>
+            I build full-stack web systems and <span className="text-stone-500">practical AI products for real businesses.</span>
           </h1>
 
           <div className="mt-9 grid max-w-4xl gap-8 border-l border-white/10 pl-5 sm:pl-7 md:grid-cols-[1fr_auto] md:items-end md:gap-12">
             <p className="max-w-2xl text-base leading-7 text-stone-400 sm:text-lg sm:leading-8">
-              Practical AI systems that qualify leads, automate outbound workflows,
-              coordinate operations, and keep humans in control of important actions.
+              From production-ready websites and dashboards to AI workflows, APIs,
+              databases, and business automation—built end to end with Next.js,
+              Python, FastAPI, and PostgreSQL.
             </p>
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.16em] text-stone-500">
               <span className="relative flex h-2 w-2" aria-hidden="true">
@@ -56,9 +57,9 @@ export default function Hero() {
         </motion.div>
 
         <div className="mt-16 grid gap-4 border-t border-white/[0.08] pt-5 text-xs uppercase tracking-[0.16em] text-stone-500 sm:grid-cols-3 sm:gap-8 lg:mt-24">
-          <span>Lead qualification</span>
-          <span>Human-in-the-loop systems</span>
-          <span>Workflow automation</span>
+          <span>Full-stack web systems</span>
+          <span>AI-powered products</span>
+          <span>Business automation</span>
         </div>
       </div>
     </section>

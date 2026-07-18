@@ -10,8 +10,8 @@ export default function Skills() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="04 / Capabilities"
-          title="A full-stack toolkit for applied AI."
-          description="The technical range to design the agent, build the product around it, and ship a workflow people can actually use."
+          title="Full-stack product development, with AI where it adds value."
+          description="Websites, dashboards, SaaS products, APIs, databases, deployment, and AI integration—designed and built as one complete system."
         />
 
         <div className="mt-14 grid border-l border-t border-white/[0.09] sm:grid-cols-2 lg:mt-20 lg:grid-cols-5">
