@@ -58,4 +58,3 @@ Audited the existing Next.js portfolio and retained its current stack, content, 
 - Graders run and results (PASS/FAIL): ESLint PASS; Next.js build PASS; local responsive visual review PASS.
 - Prompt variant (if applicable): null
 - Next experiment (smallest change to try): Add one real visual artifact per featured project and compare scanability without increasing page weight materially.
-
