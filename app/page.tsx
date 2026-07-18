@@ -43,11 +43,13 @@ export default function Home() {
       <ContactForm />
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 px-6 py-8">
-        <div className="mx-auto max-w-6xl text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Anus Butt. Built with Next.js &amp; Tailwind CSS.</p>
+      <footer className="px-5 py-8 sm:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 text-xs uppercase tracking-[0.12em] text-stone-600 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Anus Butt</p>
+          <p>Built with Next.js &amp; Tailwind CSS</p>
         </div>
       </footer>
     </main>
   );
 }
+

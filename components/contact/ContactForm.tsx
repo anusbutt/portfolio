@@ -76,17 +76,39 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-2xl">
-        <SectionHeading title="Contact" />
+    <section id="contact" className="relative overflow-hidden bg-surface px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
+      <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-accent/[0.06] blur-[120px]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="06 / Contact"
+          title="Have a workflow that AI should handle?"
+          description="Tell me where the work slows down, what needs judgment, and what a useful outcome looks like."
+        />
 
-        <p className="mt-4 text-lg leading-relaxed text-gray-400">
-          Have a business workflow that should be handled by an AI worker?
-          Let&apos;s talk.
-        </p>
+        <div className="mt-14 grid border-t border-white/[0.09] pt-10 md:grid-cols-[0.65fr_1.35fr] md:gap-16 lg:mt-20 lg:gap-24 lg:pt-14">
+          <div>
+            <p className="max-w-sm text-lg leading-8 text-stone-300">
+              Let&apos;s talk about a practical system, not another generic chatbot.
+            </p>
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">Find me online</p>
+            <div className="mt-4 flex flex-col items-start gap-2">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.platform}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex min-h-10 items-center gap-3 text-sm text-stone-400 transition-colors hover:text-stone-100"
+                >
+                  <span className="text-accent transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
+                  {link.platform}
+                </a>
+              ))}
+            </div>
+          </div>
 
         <motion.form
-          className="mt-12 space-y-6"
+          className="mt-12 space-y-7 md:mt-0"
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,11 +116,10 @@ export default function ContactForm() {
           transition={{ duration: 0.5 }}
           noValidate
         >
-          {/* Name */}
           <div>
             <label
               htmlFor="name"
-              className="mb-2 block text-sm font-medium text-gray-300"
+              className="mb-2.5 block text-xs font-semibold uppercase tracking-[0.16em] text-stone-500"
             >
               Name
             </label>
@@ -110,22 +131,23 @@ export default function ContactForm() {
                 setName(e.target.value);
                 if (errors.name) setErrors((p) => ({ ...p, name: undefined }));
               }}
-              className={`w-full rounded-lg border bg-white/[0.03] px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark ${
-                errors.name ? "border-red-500" : "border-gray-700 hover:border-gray-600"
+              className={`min-h-12 w-full border bg-transparent px-4 text-stone-100 placeholder-stone-700 transition-colors focus:border-accent ${
+                errors.name ? "border-red-500" : "border-white/15 hover:border-white/30"
               }`}
               placeholder="Your name"
               disabled={isSubmitting}
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? "name-error" : undefined}
             />
             {errors.name && (
-              <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+              <p id="name-error" className="mt-2 text-sm text-red-400">{errors.name}</p>
             )}
           </div>
 
-          {/* Email */}
           <div>
             <label
               htmlFor="email"
-              className="mb-2 block text-sm font-medium text-gray-300"
+              className="mb-2.5 block text-xs font-semibold uppercase tracking-[0.16em] text-stone-500"
             >
               Email
             </label>
@@ -137,49 +159,51 @@ export default function ContactForm() {
                 setEmail(e.target.value);
                 if (errors.email) setErrors((p) => ({ ...p, email: undefined }));
               }}
-              className={`w-full rounded-lg border bg-white/[0.03] px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark ${
-                errors.email ? "border-red-500" : "border-gray-700 hover:border-gray-600"
+              className={`min-h-12 w-full border bg-transparent px-4 text-stone-100 placeholder-stone-700 transition-colors focus:border-accent ${
+                errors.email ? "border-red-500" : "border-white/15 hover:border-white/30"
               }`}
               placeholder="you@example.com"
               disabled={isSubmitting}
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? "email-error" : undefined}
             />
             {errors.email && (
-              <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+              <p id="email-error" className="mt-2 text-sm text-red-400">{errors.email}</p>
             )}
           </div>
 
-          {/* Message */}
           <div>
             <label
               htmlFor="message"
-              className="mb-2 block text-sm font-medium text-gray-300"
+              className="mb-2.5 block text-xs font-semibold uppercase tracking-[0.16em] text-stone-500"
             >
               Message
             </label>
             <textarea
               id="message"
-              rows={5}
+              rows={6}
               value={message}
               onChange={(e) => {
                 setMessage(e.target.value);
                 if (errors.message) setErrors((p) => ({ ...p, message: undefined }));
               }}
-              className={`w-full resize-none rounded-lg border bg-white/[0.03] px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark ${
-                errors.message ? "border-red-500" : "border-gray-700 hover:border-gray-600"
+              className={`w-full resize-none border bg-transparent px-4 py-3 text-stone-100 placeholder-stone-700 transition-colors focus:border-accent ${
+                errors.message ? "border-red-500" : "border-white/15 hover:border-white/30"
               }`}
               placeholder="Tell me about your project..."
               disabled={isSubmitting}
+              aria-invalid={Boolean(errors.message)}
+              aria-describedby={errors.message ? "message-error" : undefined}
             />
             {errors.message && (
-              <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+              <p id="message-error" className="mt-2 text-sm text-red-400">{errors.message}</p>
             )}
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+            className="group inline-flex min-h-12 w-full items-center justify-center gap-3 bg-accent px-7 text-sm font-semibold text-stone-950 transition-colors hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
           >
             {isSubmitting ? (
               <span className="inline-flex items-center gap-2">
@@ -205,14 +229,17 @@ export default function ContactForm() {
                 Sending...
               </span>
             ) : (
-              "Send Message"
+              <>
+                Send message <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+              </>
             )}
           </button>
 
-          {/* Status messages */}
           {status !== "idle" && (
             <p
-              className={`text-sm ${
+              role="status"
+              aria-live="polite"
+              className={`border-l-2 pl-3 text-sm ${
                 status === "success" ? "text-green-400" : "text-red-400"
               }`}
             >
@@ -220,21 +247,9 @@ export default function ContactForm() {
             </p>
           )}
         </motion.form>
-
-        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          {socialLinks.map((link) => (
-            <a
-              key={link.platform}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark"
-            >
-              {link.platform}
-            </a>
-          ))}
         </div>
-      </div>
+        </div>
     </section>
   );
 }
+

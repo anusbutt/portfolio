@@ -42,47 +42,57 @@ function SocialIcon({ platform }: { platform: string }) {
 
 export default function About() {
   return (
-    <section id="about" className="px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading title="About" />
+    <section id="about" className="border-b border-white/[0.07] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="01 / About"
+          title="Engineering AI systems from idea to operation."
+          description="I work across the full product surface—from agent behavior and backend services to the interface where people stay in control."
+        />
 
         <motion.div
-          className="mt-12 max-w-3xl"
+          className="mt-14 grid gap-10 border-t border-white/[0.08] pt-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16 lg:mt-20 lg:pt-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-lg leading-relaxed text-gray-300">
-            I build end-to-end AI workers: Python and FastAPI backends, Next.js
-            interfaces, APIs and databases, tool integrations, structured
-            instructions, human approval steps, and reliable workflows that keep
-            running after launch.
-          </p>
-
-          <p className="mt-4 text-lg leading-relaxed text-gray-300">
-            The point is not another generic chatbot. It is systems that solve
-            specific business problems — qualifying leads, running outbound,
-            coordinating operations — while keeping humans in control of the
-            actions that matter.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">Connect</p>
+            <div className="mt-5 flex flex-col items-start gap-3">
             {socialLinks.map((link) => (
               <a
                 key={link.platform}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2 text-sm text-gray-300 transition-colors hover:border-gray-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark"
+                className="group inline-flex min-h-10 items-center gap-3 text-sm text-stone-400 transition-colors hover:text-stone-100"
               >
-                <SocialIcon platform={link.platform} />
+                <span className="text-stone-600 transition-colors group-hover:text-accent"><SocialIcon platform={link.platform} /></span>
                 {link.label}
               </a>
             ))}
+            </div>
+          </div>
+
+          <div className="max-w-3xl">
+            <p className="text-xl leading-8 text-stone-200 sm:text-2xl sm:leading-9">
+              I build end-to-end AI workers: Python and FastAPI backends, Next.js
+              interfaces, APIs and databases, tool integrations, structured
+              instructions, human approval steps, and reliable workflows that keep
+              running after launch.
+            </p>
+
+            <p className="mt-6 text-base leading-8 text-stone-400">
+              The point is not another generic chatbot. It is systems that solve
+              specific business problems—qualifying leads, running outbound, and
+              coordinating operations—while keeping humans in control of the
+              actions that matter.
+            </p>
           </div>
         </motion.div>
       </div>
     </section>
   );
 }
+

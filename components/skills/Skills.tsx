@@ -6,32 +6,38 @@ import { skillCategories } from "@/data/skills";
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading title="Skills" />
+    <section id="skills" className="border-b border-white/[0.07] bg-surface px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="04 / Capabilities"
+          title="A full-stack toolkit for applied AI."
+          description="The technical range to design the agent, build the product around it, and ship a workflow people can actually use."
+        />
 
-        <div className="mt-12 space-y-8">
+        <div className="mt-14 grid border-l border-t border-white/[0.09] sm:grid-cols-2 lg:mt-20 lg:grid-cols-5">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: catIndex * 0.1 }}
+              transition={{ duration: 0.4, delay: catIndex * 0.07 }}
+              className="border-b border-r border-white/[0.09] p-6 sm:p-7"
             >
-              <h3 className="mb-3 text-sm font-medium uppercase tracking-wider text-gray-500">
+              <span className="text-xs tabular-nums text-stone-700">{String(catIndex + 1).padStart(2, "0")}</span>
+              <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.16em] text-stone-200">
                 {category.name}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <ul className="mt-5 space-y-2.5">
                 {category.skills.map((skill) => (
-                  <span
+                  <li
                     key={skill}
-                    className="rounded-full border border-gray-700 bg-white/[0.03] px-4 py-2 text-sm text-gray-300 transition-colors hover:border-gray-500 hover:bg-white/[0.06]"
+                    className="flex items-start gap-2 text-sm leading-5 text-stone-400"
                   >
-                    {skill}
-                  </span>
+                    <span className="mt-[0.4rem] h-1 w-1 shrink-0 bg-accent/70" aria-hidden="true" />{skill}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>
@@ -39,3 +45,4 @@ export default function Skills() {
     </section>
   );
 }
+
