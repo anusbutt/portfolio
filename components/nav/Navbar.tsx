@@ -46,12 +46,12 @@ export default function Navbar() {
         >
           <span className="relative h-8 w-8 shrink-0 overflow-hidden border border-white/15 bg-stone-900">
             <Image
-              src="/Gemini_Generated_Image_6yaihi6yaihi6yai.jpg"
+              src="/logo.png.png"
               alt=""
               fill
               priority
               sizes="32px"
-              className="origin-[50%_30%] scale-[1.8] object-cover object-center transition-transform duration-300 group-hover:scale-[1.9]"
+              className="scale-[1.45] object-contain invert transition-transform duration-300 group-hover:scale-[1.55]"
             />
           </span>
           <span className="hidden text-sm font-medium tracking-tight text-stone-200 sm:block">

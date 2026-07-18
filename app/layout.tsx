@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Anus Butt — Full-stack Developer, AI Engineer & Founder",
   description:
     "Full-stack developer, AI engineer, and founder of Omniveer building production-ready websites, dashboards, APIs, databases, AI products, and business automation.",
+  icons: {
+    icon: [{ url: "/logo.png.png", type: "image/png" }],
+    shortcut: "/logo.png.png",
+    apple: "/logo.png.png",
+  },
   openGraph: {
     title: "Anus Butt — Full-stack Developer, AI Engineer & Founder",
     description:
