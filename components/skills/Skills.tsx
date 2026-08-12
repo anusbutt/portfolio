@@ -9,12 +9,12 @@ export default function Skills() {
     <section id="skills" className="border-b border-white/[0.07] bg-surface px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow="04 / Capabilities"
-          title="Full-stack product development, with AI where it adds value."
-          description="Websites, dashboards, SaaS products, APIs, databases, deployment, and AI integration—designed and built as one complete system."
+          eyebrow="03 / Core stack"
+          title="The tools behind the work."
+          description="A focused stack reflected in the projects above—not a catalogue of generic capabilities."
         />
 
-        <div className="mt-14 grid border-l border-t border-white/[0.09] sm:grid-cols-2 lg:mt-20 lg:grid-cols-5">
+        <div className="mt-14 grid border-l border-t border-white/[0.09] sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.name}

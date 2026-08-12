@@ -5,46 +5,15 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: "Full-stack Web",
-    skills: [
-      "Production websites",
-      "SaaS products",
-      "Dashboards",
-      "Internal tools",
-      "Next.js",
-      "React",
-      "Responsive interfaces",
-    ],
+    name: "Product Engineering",
+    skills: ["Next.js", "TypeScript", "React", "Testing", "Deployment"],
   },
   {
     name: "Backend & Data",
-    skills: ["Python", "FastAPI", "REST APIs", "PostgreSQL", "Supabase", "API integrations"],
+    skills: ["Python", "FastAPI", "PostgreSQL", "REST APIs", "API integrations"],
   },
   {
-    name: "Applied AI",
-    skills: [
-      "AI agents",
-      "Tool use",
-      "MCP",
-      "Prompt engineering",
-      "Human approval",
-      "Guardrails",
-    ],
-  },
-  {
-    name: "Product Engineering",
-    skills: [
-      "TypeScript",
-      "Tailwind CSS",
-      "Git",
-      "GitHub",
-      "Spec-driven development",
-      "Testing",
-      "Deployment",
-    ],
-  },
-  {
-    name: "Tools",
-    skills: ["Claude Code", "OpenAI Codex", "OpenRouter"],
+    name: "AI & Developer Tools",
+    skills: ["AI agents", "Tool use", "Codex", "Claude Code", "Git & GitHub"],
   },
 ];

@@ -13,7 +13,7 @@ export default function Education() {
   return (
     <section id="education" className="border-b border-white/[0.07] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="05 / Education" title="Learning grounded in building." />
+        <SectionHeading eyebrow="04 / Education" title="Learning grounded in building." />
 
         <motion.ul
           className="mt-12 border-b border-white/[0.09] md:mt-16"

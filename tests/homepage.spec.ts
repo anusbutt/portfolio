@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 const heroHeading =
-  "I build full-stack web systems and practical AI products for real businesses.";
+  "I build auditable AI systems and full-stack products that ship.";
 
 test("homepage positioning and responsive layout", async ({ page }, testInfo) => {
   const isMobile = testInfo.project.name === "mobile-edge";
@@ -10,9 +10,9 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(heroHeading);
   await expect(
-    page.locator('header img[src*="Gemini_Generated_Image"]'),
+    page.locator('header img[src*="logo.png"]'),
   ).toBeVisible();
-  await expect(page.getByText("Full-stack web systems", { exact: true })).toBeVisible();
+  await expect(page.getByText("Open to AI & full-stack roles", { exact: true })).toBeVisible();
 
   const hasHorizontalOverflow = await page.evaluate(
     () => document.documentElement.scrollWidth > window.innerWidth,
@@ -27,29 +27,31 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
     await menuButton.click();
     await expect(page.getByRole("link", { name: "Projects", exact: true })).toBeVisible();
     await menuButton.click();
-  } else {
-    await expect(
-      page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", {
-        name: "Omniveer",
-        exact: true,
-      }),
-    ).toBeVisible();
   }
 
-  const capabilitiesHeading = page.getByRole("heading", {
-    name: "Full-stack product development, with AI where it adds value.",
+  const projectsHeading = page.getByRole("heading", {
+    name: "Shipped systems, with the code to prove it.",
   });
+  await projectsHeading.scrollIntoViewIfNeeded();
+  await expect(projectsHeading).toBeVisible();
+  const projectNames = await page.locator("#projects article h3").allTextContents();
+  expect(projectNames).toEqual(["GraphKeeper", "Agent Replay", "Prospector", "Commit Voice"]);
+  await expect(page.getByText("Featured open source", { exact: true })).toBeVisible();
+
+  const capabilitiesHeading = page.getByRole("heading", { name: "The tools behind the work." });
   await capabilitiesHeading.scrollIntoViewIfNeeded();
-  await expect(capabilitiesHeading).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Full-stack Web", exact: true }),
+    page.getByRole("heading", { name: "Product Engineering", exact: true }),
   ).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath("capabilities.png") });
 
   const contactHeading = page.getByRole("heading", {
-    name: "Need a website, software system, or AI-powered workflow?",
+    name: "Looking for an AI or full-stack engineer?",
   });
   await contactHeading.scrollIntoViewIfNeeded();
   await expect(contactHeading).toBeVisible();
+  await expect(page.getByText("Founder of Omniveer.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Duct Lead Qualifier", { exact: false })).toHaveCount(0);
+  await expect(page.getByText("Available for projects", { exact: false })).toHaveCount(0);
   await page.screenshot({ path: testInfo.outputPath("contact.png") });
 });

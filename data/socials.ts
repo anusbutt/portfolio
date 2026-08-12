@@ -20,9 +20,4 @@ export const socialLinks: SocialLink[] = [
     url: "https://x.com/iamanusbutt",
     label: "@iamanusbutt",
   },
-  {
-    platform: "Omniveer",
-    url: "https://www.omniveer.com/",
-    label: "omniveer.com",
-  },
 ];

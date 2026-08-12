@@ -4,31 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#work", label: "Work" },
   { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];
-
-function ExternalArrow() {
-  return (
-    <svg
-      className="h-3 w-3"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M7 17L17 7M9 7h8v8"
-      />
-    </svg>
-  );
-}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -70,15 +50,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="https://www.omniveer.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-sm text-xs font-medium uppercase tracking-[0.12em] text-stone-400 transition-colors hover:text-accent"
-          >
-            Omniveer
-            <ExternalArrow />
-          </a>
         </div>
 
         {/* Mobile menu button */}
@@ -115,16 +86,6 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="https://www.omniveer.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className="inline-flex min-h-12 items-center gap-1.5 text-sm font-medium text-stone-500 transition-colors hover:text-accent"
-            >
-              Omniveer
-              <ExternalArrow />
-            </a>
           </div>
         </div>
       )}

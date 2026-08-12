@@ -80,15 +80,15 @@ export default function ContactForm() {
       <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-accent/[0.06] blur-[120px]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow="06 / Contact"
-          title="Need a website, software system, or AI-powered workflow?"
-          description="Tell me what you are building, where the current process slows down, and what a successful result should look like. I can help turn it into a complete, production-ready system."
+          eyebrow="05 / Contact"
+          title="Looking for an AI or full-stack engineer?"
+          description="I am open to AI Engineer and Full-stack Engineer opportunities, as well as thoughtful open-source and technical collaborations."
         />
 
         <div className="mt-14 grid border-t border-white/[0.09] pt-10 md:grid-cols-[0.65fr_1.35fr] md:gap-16 lg:mt-20 lg:gap-24 lg:pt-14">
           <div>
             <p className="max-w-sm text-lg leading-8 text-stone-300">
-              Let&apos;s turn the requirement into a clear, reliable product.
+              Share the role, team, or engineering problem you would like to discuss.
             </p>
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">Find me online</p>
             <div className="mt-4 flex flex-col items-start gap-2">
@@ -190,7 +190,7 @@ export default function ContactForm() {
               className={`w-full resize-none border bg-transparent px-4 py-3 text-stone-100 placeholder-stone-700 transition-colors focus:border-accent ${
                 errors.message ? "border-red-500" : "border-white/15 hover:border-white/30"
               }`}
-              placeholder="Tell me about your project..."
+              placeholder="Tell me about the role, team, or collaboration..."
               disabled={isSubmitting}
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? "message-error" : undefined}

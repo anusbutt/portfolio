@@ -5,56 +5,78 @@ export interface Project {
   techStack: string[];
   githubUrl?: string;
   websiteUrl?: string;
+  featured?: boolean;
 }
 
 export const projects: Project[] = [
   {
-    name: "Omniveer Duct Lead Qualifier",
+    name: "GraphKeeper",
     problem:
-      "Duct-cleaning companies lose inbound leads when nobody responds fast enough.",
+      "Coding agents lose context between sessions, leaving durable conclusions difficult to verify or safely update.",
     description:
-      "An AI lead qualification system for duct-cleaning companies. It talks with incoming leads, gathers job details, qualifies intent, supports the booking workflow, stores leads in a dashboard, and emails the owner.",
+      "Built and maintain an open-source TypeScript CLI for grounded, auditable agent memory. It stores append-only claims with evidence and provenance beside the code, protects history with Git validation, and ships repository integrations for Codex and Claude Code.",
     techStack: [
-      "AI Agents",
-      "Python",
-      "FastAPI",
-      "Next.js",
-      "PostgreSQL",
-      "Business Automation",
+      "TypeScript CLI",
+      "AI agent memory",
+      "Evidence & provenance",
+      "Git",
+      "Codex",
+      "Claude Code",
+      "Validation",
+      "Testing",
     ],
-    websiteUrl: "https://www.omniveer.com/duct-lead-qualifier",
-  },
-  {
-    name: "Prospector",
-    problem:
-      "Manual outbound research and personalization do not scale.",
-    description:
-      "A human-in-the-loop AI outbound system that discovers companies, researches each business, drafts personalized emails, waits for approval, and then sends outreach.",
-    techStack: [
-      "AI Agents",
-      "Python",
-      "Email Automation",
-      "Human Approval",
-      "Lead Generation",
-    ],
-    githubUrl: "https://github.com/anusbutt/Prospector",
+    githubUrl: "https://github.com/anusbutt/Graph_Keeper",
+    featured: true,
   },
   {
     name: "Agent Replay",
     problem:
-      "AI agent failures are hard to reproduce and debug after the fact.",
+      "AI agent failures are difficult to reproduce, explain, and retest without replaying real-world side effects.",
     description:
-      "A flight recorder and time-travel debugger for AI agents. It records agent execution, helps reproduce failures, and supports verifying fixes.",
-    techStack: ["Python", "Agent Observability", "Debugging", "Developer Tools"],
+      "Built a flight recorder and time-travel debugger that captures agent execution, analyzes failures, and forks a run from the failing step with sandboxed tool calls to verify a fix. The system spans a Python SDK, FastAPI, PostgreSQL, and a Next.js dashboard.",
+    techStack: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Next.js",
+      "TypeScript",
+      "AI evaluation",
+      "Docker",
+    ],
     githubUrl: "https://github.com/anusbutt/agent-replay",
+    websiteUrl: "https://agent-replay-phi.vercel.app/",
   },
   {
-    name: "Nestaro Pilot",
+    name: "Prospector",
     problem:
-      "Small businesses have work scattered across communication and business tools.",
+      "AI-assisted research and outreach can fabricate details or act before a human has reviewed the result.",
     description:
-      "An autonomous AI employee concept for small businesses that coordinates work across communication and business tools while keeping sensitive actions behind human approval.",
-    techStack: ["Python", "Claude Code", "MCP", "Human-in-the-loop", "Automation"],
-    githubUrl: "https://github.com/anusbutt/nestaro-pilot",
+      "Built a Python CLI that researches public company sources, scores evidence deterministically, produces citation-validated drafts, and sends only human-approved notes. Safety guarantees, dry-run defaults, and duplicate-send protection are enforced in code and tests.",
+    techStack: [
+      "Python CLI",
+      "AI tool use",
+      "Evidence validation",
+      "Human approval",
+      "API integrations",
+      "Testing",
+    ],
+    githubUrl: "https://github.com/anusbutt/Prospector",
+  },
+  {
+    name: "Commit Voice",
+    problem:
+      "Turning shipped code into accurate, reviewable release content is repetitive and prone to unsupported claims.",
+    description:
+      "Built a Next.js application that ingests GitHub commits on a schedule, generates drafts from verified commit details, stores review state in PostgreSQL, and publishes approved posts through platform APIs. Includes authentication, a review dashboard, and Vercel deployment.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "AI agents",
+      "GitHub API",
+      "Authentication",
+      "Vercel",
+    ],
+    githubUrl: "https://github.com/anusbutt/commit-voice",
   },
 ];

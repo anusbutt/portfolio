@@ -1,7 +1,6 @@
 import Navbar from "@/components/nav/Navbar";
 import Hero from "@/components/hero/Hero";
 import About from "@/components/about/About";
-import CurrentWork from "@/components/work/CurrentWork";
 import Projects from "@/components/projects/Projects";
 import Skills from "@/components/skills/Skills";
 import Education from "@/components/education/Education";
@@ -11,18 +10,12 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Anus Butt",
-  jobTitle: "Full-stack Developer and AI Engineer",
+  jobTitle: "AI Engineer and Full-stack Engineer",
   address: { "@type": "PostalAddress", addressCountry: "Pakistan" },
-  worksFor: {
-    "@type": "Organization",
-    name: "Omniveer",
-    url: "https://www.omniveer.com/",
-  },
   sameAs: [
     "https://github.com/anusbutt",
     "https://x.com/iamanusbutt",
     "https://www.linkedin.com/in/anus-yousuf/",
-    "https://www.omniveer.com/",
   ],
 };
 
@@ -35,9 +28,8 @@ export default function Home() {
       />
       <Navbar />
       <Hero />
-      <About />
-      <CurrentWork />
       <Projects />
+      <About />
       <Skills />
       <Education />
       <ContactForm />

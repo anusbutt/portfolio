@@ -12,7 +12,11 @@ export default function ProjectCard({
 }) {
   return (
     <motion.article
-      className="group grid gap-6 border-t border-white/[0.09] py-9 transition-colors md:grid-cols-[3rem_minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-8 md:py-11 lg:grid-cols-[4rem_minmax(16rem,0.75fr)_minmax(20rem,1.25fr)] lg:gap-12"
+      className={`group relative grid gap-6 border-t py-9 transition-colors md:grid-cols-[3rem_minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-8 md:py-11 lg:grid-cols-[4rem_minmax(16rem,0.75fr)_minmax(20rem,1.25fr)] lg:gap-12 ${
+        project.featured
+          ? "border-accent/50 bg-accent/[0.035] px-5 sm:px-7"
+          : "border-white/[0.09]"
+      }`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -23,6 +27,11 @@ export default function ProjectCard({
       </span>
 
       <div>
+        {project.featured && (
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+            Featured open source
+          </p>
+        )}
         <h3 className="text-balance text-2xl font-semibold tracking-[-0.03em] text-stone-100 transition-colors group-hover:text-accent md:text-3xl">
           {project.name}
         </h3>
@@ -65,7 +74,7 @@ export default function ProjectCard({
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
-            Visit website <span className="transition-transform group-hover/link:translate-x-1" aria-hidden="true">↗</span>
+            View live project <span className="transition-transform group-hover/link:translate-x-1" aria-hidden="true">↗</span>
           </a>
         )}
         {project.githubUrl && (
@@ -83,7 +92,7 @@ export default function ProjectCard({
             >
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg>
-            View on GitHub <span className="transition-transform group-hover/link:translate-x-1" aria-hidden="true">↗</span>
+            View source &amp; docs <span className="transition-transform group-hover/link:translate-x-1" aria-hidden="true">↗</span>
           </a>
         )}
         </div>

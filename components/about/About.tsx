@@ -19,19 +19,6 @@ function SocialIcon({ platform }: { platform: string }) {
       </svg>
     );
   }
-  if (platform === "Omniveer") {
-    return (
-      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" strokeWidth={2} />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
-        />
-      </svg>
-    );
-  }
   // X / Twitter
   return (
     <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -45,9 +32,9 @@ export default function About() {
     <section id="about" className="border-b border-white/[0.07] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow="01 / About"
-          title="Building complete digital products from interface to infrastructure."
-          description="Full-stack web development and applied AI, treated as one complete product discipline."
+          eyebrow="02 / About"
+          title="Engineering across the AI and product stack."
+          description="I work from system behavior and trust boundaries through APIs, data, interfaces, tests, and deployment."
         />
 
         <motion.div
@@ -77,14 +64,17 @@ export default function About() {
 
           <div className="max-w-3xl">
             <p className="text-xl leading-8 text-stone-200 sm:text-2xl sm:leading-9">
-              I build full-stack websites, dashboards, internal tools, SaaS products,
-              and AI-integrated systems.
+              I build AI systems and full-stack products where reliability,
+              traceability, and human control matter.
             </p>
 
             <p className="mt-6 text-base leading-8 text-stone-400">
-              I work across the full product surface—from responsive Next.js
-              interfaces and backend APIs to databases, automation, deployment, and
-              the AI layer when it adds real value.
+              My recent work includes grounded memory for coding agents, agent
+              replay and evaluation, evidence-cited automation, and deployed web
+              applications backed by APIs and PostgreSQL.
+            </p>
+            <p className="mt-6 text-sm leading-7 text-stone-500">
+              Founder of Omniveer.
             </p>
           </div>
         </motion.div>
