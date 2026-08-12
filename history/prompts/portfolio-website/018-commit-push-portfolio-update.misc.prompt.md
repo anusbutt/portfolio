@@ -54,6 +54,6 @@ Executed the requested Git workflow for the focused Full-stack AI portfolio upda
 ## Evaluation notes (flywheel)
 
 - Failure modes observed: The PHR helper allocated colliding ID 0001; the record was corrected to the next valid ID, 018, before staging.
-- Graders run and results (PASS/FAIL): PHR route, prompt completeness, and placeholder validation PASS; Git remote verification pending execution.
+- Graders run and results (PASS/FAIL): PHR route, prompt completeness, placeholder validation, and Git remote verification PASS; GitHub CLI unavailable, so the manual PR URL is reported.
 - Prompt variant (if applicable): none
 - Next experiment (smallest change to try): none
