@@ -25,7 +25,6 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-.vercel
 # Local Spec-Driven Development and agent workspace
 .agents/
 .claude/

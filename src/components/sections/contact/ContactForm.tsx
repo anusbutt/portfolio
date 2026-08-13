@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
+import { CONTACT_FIELD_LIMITS, isValidContactEmail } from "@/shared/contact";
 
 interface FormErrors {
   name?: string;
@@ -13,6 +14,7 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -20,15 +22,20 @@ export default function ContactForm() {
 
   function validate(): FormErrors {
     const errs: FormErrors = {};
-    if (!name.trim()) errs.name = "Name is required";
-    else if (name.length > 100) errs.name = "Name must be 100 characters or less";
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedMessage = message.trim();
 
-    if (!email.trim()) errs.email = "Email is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      errs.email = "Please enter a valid email";
+    if (!trimmedName) errs.name = "Name is required";
+    else if (trimmedName.length > CONTACT_FIELD_LIMITS.name)
+      errs.name = "Name must be 100 characters or less";
 
-    if (!message.trim()) errs.message = "Message is required";
-    else if (message.length > 2000) errs.message = "Message must be 2000 characters or less";
+    if (!trimmedEmail) errs.email = "Email is required";
+    else if (!isValidContactEmail(trimmedEmail)) errs.email = "Please enter a valid email";
+
+    if (!trimmedMessage) errs.message = "Message is required";
+    else if (trimmedMessage.length > CONTACT_FIELD_LIMITS.message)
+      errs.message = "Message must be 2000 characters or less";
 
     return errs;
   }
@@ -50,7 +57,12 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), email: email.trim(), message: message.trim() }),
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          message: message.trim(),
+          website,
+        }),
       });
 
       const data = await res.json();
@@ -61,6 +73,7 @@ export default function ContactForm() {
         setName("");
         setEmail("");
         setMessage("");
+        setWebsite("");
       } else {
         setStatus("error");
         setStatusMessage(data.message || "Failed to send message. Please try again.");
@@ -165,6 +178,19 @@ export default function ContactForm() {
             {errors.message && (
               <p id="message-error" className="mt-2 text-sm text-red-400">{errors.message}</p>
             )}
+          </div>
+
+          <div aria-hidden="true" className="sr-only">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
           </div>
 
           <button
