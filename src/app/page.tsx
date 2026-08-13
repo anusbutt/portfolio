@@ -5,7 +5,7 @@ import About from "@/components/sections/about/About";
 import Projects from "@/components/sections/projects/Projects";
 import Skills from "@/components/sections/skills/Skills";
 import Education from "@/components/sections/education/Education";
-import ContactForm from "@/components/sections/contact/ContactForm";
+import Contact from "@/components/sections/contact/Contact";
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -29,7 +29,7 @@ export default function Home() {
       <About />
       <Skills />
       <Education />
-      <ContactForm />
+      <Contact />
       <footer className="px-5 py-8 sm:px-8 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 text-xs uppercase tracking-[0.12em] text-stone-600 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {profile.name}</p>

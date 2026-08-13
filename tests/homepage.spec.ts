@@ -4,7 +4,7 @@ const heroHeading =
   "I build auditable AI systems and full-stack products that ship.";
 
 test("homepage positioning and responsive layout", async ({ page }, testInfo) => {
-  const isMobile = testInfo.project.name === "mobile-edge";
+  const isMobile = testInfo.project.use.isMobile === true;
 
   await page.goto("/");
 
@@ -22,11 +22,24 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
   await page.screenshot({ path: testInfo.outputPath("hero.png") });
 
   if (isMobile) {
+    const header = page.locator("header");
     const menuButton = page.getByRole("button", { name: "Toggle navigation menu" });
+    const desktopLinks = page.locator("nav > div").first();
     await expect(menuButton).toBeVisible();
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
+    await expect(desktopLinks).toBeHidden();
+
     await menuButton.click();
-    await expect(page.getByRole("link", { name: "Projects", exact: true })).toBeVisible();
-    await menuButton.click();
+    await expect(menuButton).toHaveAttribute("aria-expanded", "true");
+    for (const label of ["Projects", "About", "Skills", "Contact"]) {
+      await expect(
+        header.getByRole("link", { name: label, exact: true }).last(),
+      ).toBeVisible();
+    }
+
+    await header.getByRole("link", { name: "Projects", exact: true }).last().click();
+    await expect(page).toHaveURL(/#projects$/);
+    await expect(menuButton).toHaveAttribute("aria-expanded", "false");
   }
 
   const projectsHeading = page.getByRole("heading", {
