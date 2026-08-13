@@ -1,8 +1,8 @@
-export interface ContactInput {
-  name: string;
-  email: string;
-  message: string;
-}
+import {
+  CONTACT_FIELD_LIMITS,
+  isValidContactEmail,
+  type ContactInput,
+} from "@/shared/contact";
 
 interface ContactPayload {
   name?: unknown;
@@ -12,7 +12,6 @@ interface ContactPayload {
 }
 
 const allowedKeys = new Set(["name", "email", "message", "website"]);
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -47,19 +46,19 @@ export function parseContactInput(value: unknown):
   if (input.name.length === 0) {
     return { ok: false, message: "Name is required." };
   }
-  if (input.name.length > 100) {
+  if (input.name.length > CONTACT_FIELD_LIMITS.name) {
     return { ok: false, message: "Name must be 100 characters or less." };
   }
   if (input.email.length === 0) {
     return { ok: false, message: "Email is required." };
   }
-  if (input.email.length > 254 || !emailPattern.test(input.email)) {
+  if (!isValidContactEmail(input.email)) {
     return { ok: false, message: "Please enter a valid email address." };
   }
   if (input.message.length === 0) {
     return { ok: false, message: "Message is required." };
   }
-  if (input.message.length > 2000) {
+  if (input.message.length > CONTACT_FIELD_LIMITS.message) {
     return { ok: false, message: "Message must be 2000 characters or less." };
   }
 

@@ -2,7 +2,7 @@
 
 Personal portfolio for Anus Butt, an AI engineer and full-stack engineer building auditable agent systems, developer tools, and production web applications.
 
-Live site: https://anusbutt.com
+Live site: https://www.anasbutt.site
 
 ## Architecture
 
@@ -62,7 +62,7 @@ npm run check
 
 ## Deployment
 
-Deploy the repository to Vercel with the four environment variables configured in the project settings. Pushes to the main branch can use the included GitHub Actions checks as the merge gate. The contact limiter is intentionally an in-memory, per-instance guard suitable for low-volume portfolio traffic; a managed limiter would be the next step if abuse volume grows.
+Deploy the repository to Vercel with the four environment variables configured in the project settings. Pushes to the default branch can use the included GitHub Actions checks as the merge gate. The contact limiter is intentionally an in-memory, per-instance guard suitable for low-volume portfolio traffic; a managed limiter would be the next step if abuse volume grows.
 
 ## Contributing and security
 

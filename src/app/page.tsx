@@ -1,4 +1,5 @@
 import { profile } from "@/content/profile";
+import { siteUrl } from "@/content/site";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/hero/Hero";
 import About from "@/components/sections/about/About";
@@ -14,6 +15,7 @@ const personJsonLd = {
   jobTitle: profile.title,
   address: { "@type": "PostalAddress", addressCountry: "Pakistan" },
   sameAs: profile.sameAs,
+  url: siteUrl.toString(),
 };
 
 export default function Home() {
@@ -21,7 +23,9 @@ export default function Home() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+        }}
       />
       <Navbar />
       <Hero />

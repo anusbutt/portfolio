@@ -1,3 +1,5 @@
+const DEFAULT_SITE_URL = "https://www.anasbutt.site";
+
 export interface Profile {
   name: string;
   title: string;
@@ -17,7 +19,7 @@ export const profile: Profile = {
     "AI engineer and full-stack engineer building auditable agent systems, developer tools, and production web applications with TypeScript, Python, FastAPI, and PostgreSQL.",
   location: "Karachi, Pakistan",
   availability: "Open to AI & full-stack roles",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://anusbutt.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL,
   sameAs: [
     "https://github.com/anusbutt",
     "https://x.com/iamanusbutt",

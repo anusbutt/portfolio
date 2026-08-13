@@ -86,6 +86,9 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
   await contactHeading.scrollIntoViewIfNeeded();
   await expect(contactHeading).toBeVisible();
   await expect(page.getByText("Founder of Omniveer.", { exact: true })).toBeVisible();
+  await expect(page.locator("#website")).toBeAttached();
+  await expect(page.locator("#website").locator("..")).toHaveAttribute("aria-hidden", "true");
+  await expect(page.locator("#website")).toHaveAttribute("tabindex", "-1");
   await expect(
     page.locator("#contact").getByText("Duct Lead Qualifier", { exact: false }),
   ).toHaveCount(0);

@@ -1,5 +1,5 @@
 import { getResend } from "@/server/email/resend";
-import type { ContactInput } from "@/server/contact/validation";
+import type { ContactInput } from "@/shared/contact";
 
 interface ContactConfig {
   from: string;
