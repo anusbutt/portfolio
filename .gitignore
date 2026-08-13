@@ -26,3 +26,15 @@ Thumbs.db
 .vscode/
 .idea/
 .vercel
+# Local Spec-Driven Development and agent workspace
+.agents/
+.claude/
+.specify/
+specs/
+history/
+evidence/
+graph/
+scripts/
+AGENTS.md
+CLAUDE.md
+Codex Prompt — Portfolio Architecture Refactor with Pure SDD.md
