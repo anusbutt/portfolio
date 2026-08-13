@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "claim_ebf859a9",
+    "subject": "portfolio_project_section",
+    "predicate": "has_project_hierarchy",
+    "object": "GraphKeeper, TaskMate, Omniveer Duct Lead Qualifier, RAG-Powered Interactive Robotics Textbook, Agent Replay; Prospector is secondary",
+    "confidence": 1,
+    "source": {
+      "kind": "tool_output",
+      "command": "rg -n -e name: -e moreProjects -e title= -e description= data/projects.ts components/projects/Projects.tsx",
+      "exit_code": 0,
+      "ref": "evidence/portfolio-project-hierarchy.txt#L1-L12",
+      "captured": "2026-08-12T23:20:44Z"
+    },
+    "produced_by": "run_2026-08-13-portfolio_projects_a1",
+    "created": "2026-08-12T23:20:44Z"
+  }
+]

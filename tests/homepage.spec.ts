@@ -30,13 +30,35 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
   }
 
   const projectsHeading = page.getByRole("heading", {
-    name: "Shipped systems, with the code to prove it.",
+    name: "AI systems, built end to end.",
   });
   await projectsHeading.scrollIntoViewIfNeeded();
   await expect(projectsHeading).toBeVisible();
-  const projectNames = await page.locator("#projects article h3").allTextContents();
-  expect(projectNames).toEqual(["GraphKeeper", "Agent Replay", "Prospector", "Commit Voice"]);
-  await expect(page.getByText("Featured open source", { exact: true })).toBeVisible();
+  const projectNames = await page
+    .locator('#projects article[data-project-tier="main"] h3')
+    .allTextContents();
+  expect(projectNames).toEqual([
+    "GraphKeeper",
+    "TaskMate",
+    "Omniveer Duct Lead Qualifier",
+    "RAG-Powered Interactive Robotics Textbook",
+    "Agent Replay",
+  ]);
+  const mainProjectCards = page.locator('#projects article[data-project-tier="main"]');
+  for (let index = 0; index < (await mainProjectCards.count()); index += 1) {
+    const projectCard = mainProjectCards.nth(index);
+    await projectCard.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() => projectCard.evaluate((element) => Number(getComputedStyle(element).opacity)))
+      .toBeGreaterThan(0.99);
+  }
+  await expect(page.getByText("Flagship project", { exact: true })).toBeVisible();
+  await expect(page.getByText("More projects", { exact: true })).toBeVisible();
+  await expect(
+    page.locator('#projects article[data-project-tier="more"] h3'),
+  ).toHaveText("Prospector");
+  await expect(page.getByText("Nestaro Pilot", { exact: true })).toHaveCount(0);
+  await page.screenshot({ path: testInfo.outputPath("projects.png"), fullPage: true });
 
   const capabilitiesHeading = page.getByRole("heading", { name: "The tools behind the work." });
   await capabilitiesHeading.scrollIntoViewIfNeeded();
@@ -51,7 +73,9 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
   await contactHeading.scrollIntoViewIfNeeded();
   await expect(contactHeading).toBeVisible();
   await expect(page.getByText("Founder of Omniveer.", { exact: true })).toBeVisible();
-  await expect(page.getByText("Duct Lead Qualifier", { exact: false })).toHaveCount(0);
+  await expect(
+    page.locator("#contact").getByText("Duct Lead Qualifier", { exact: false }),
+  ).toHaveCount(0);
   await expect(page.getByText("Available for projects", { exact: false })).toHaveCount(0);
   await page.screenshot({ path: testInfo.outputPath("contact.png") });
 });

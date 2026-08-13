@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "run_2026-08-13-portfolio_projects_a1",
+    "started": "2026-08-12T23:20:15Z",
+    "tool": "coding_agent",
+    "task": "record verified portfolio project hierarchy",
+    "evidence": ["evidence/portfolio-project-hierarchy.txt"],
+    "claims_written": ["claim_ebf859a9"],
+    "ended": "2026-08-12T23:20:44Z",
+    "verdict": "passed"
+  }
+]

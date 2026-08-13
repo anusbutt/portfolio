@@ -5,6 +5,7 @@ export interface Project {
   techStack: string[];
   githubUrl?: string;
   websiteUrl?: string;
+  websiteLabel?: string;
   featured?: boolean;
 }
 
@@ -12,71 +13,103 @@ export const projects: Project[] = [
   {
     name: "GraphKeeper",
     problem:
-      "Coding agents lose context between sessions, leaving durable conclusions difficult to verify or safely update.",
+      "Coding agents lose durable context, and opaque summaries make remembered claims difficult to trust.",
     description:
-      "Built and maintain an open-source TypeScript CLI for grounded, auditable agent memory. It stores append-only claims with evidence and provenance beside the code, protects history with Git validation, and ships repository integrations for Codex and Claude Code.",
+      "Built and maintain a Git-native memory layer for coding agents. Evidence-backed claims, explicit provenance, append-only corrections, and repository validation make project knowledge durable, auditable, and safer to reuse across sessions.",
     techStack: [
       "TypeScript CLI",
-      "AI agent memory",
+      "Agent memory",
       "Evidence & provenance",
-      "Git",
+      "Git-native storage",
       "Codex",
       "Claude Code",
-      "Validation",
-      "Testing",
     ],
     githubUrl: "https://github.com/anusbutt/Graph_Keeper",
+    websiteUrl: "https://www.npmjs.com/package/graphkeeper",
+    websiteLabel: "View npm package",
     featured: true,
+  },
+  {
+    name: "TaskMate",
+    problem:
+      "Task apps still make users translate intent into manual form and list operations.",
+    description:
+      "Built a full-stack AI task manager where authenticated users create, update, complete, and delete tasks through natural language. A Next.js client and FastAPI/PostgreSQL backend orchestrate an AI agent whose MCP tools execute scoped task actions.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "JWT auth",
+      "AI agents",
+      "MCP tools",
+    ],
+    githubUrl: "https://github.com/anusbutt/taskmate",
+    websiteUrl: "https://evolution-of-todo-coral.vercel.app/",
+  },
+  {
+    name: "Omniveer Duct Lead Qualifier",
+    problem:
+      "Service businesses lose ready-to-book leads when repetitive qualification waits on a human reply.",
+    description:
+      "Built an applied AI workflow that responds to inbound duct-cleaning leads, gathers job details, checks fit and availability, and moves qualified conversations toward booking—with human takeover for exceptions.",
+    techStack: [
+      "AI agents",
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "PostgreSQL",
+      "Workflow automation",
+    ],
+    websiteUrl: "https://www.omniveer.com/lead-qualification-agent",
+    websiteLabel: "View case study",
+  },
+  {
+    name: "RAG-Powered Interactive Robotics Textbook",
+    problem:
+      "Static learning content cannot answer follow-up questions without losing source context.",
+    description:
+      "Built and deployed an interactive textbook with a RAG assistant that embeds and retrieves course content from Qdrant, returns source-grounded answers with lesson citations, and serves the experience through Docusaurus and FastAPI.",
+    techStack: [
+      "RAG",
+      "Cohere embeddings",
+      "Qdrant",
+      "FastAPI",
+      "Docusaurus",
+      "Source citations",
+    ],
+    githubUrl:
+      "https://github.com/anusbutt/Physical-AI-Humanoid-Robotics-Textbook",
+    websiteUrl:
+      "https://anusbutt.github.io/Physical-AI-Humanoid-Robotics-Textbook/",
   },
   {
     name: "Agent Replay",
     problem:
       "AI agent failures are difficult to reproduce, explain, and retest without replaying real-world side effects.",
     description:
-      "Built a flight recorder and time-travel debugger that captures agent execution, analyzes failures, and forks a run from the failing step with sandboxed tool calls to verify a fix. The system spans a Python SDK, FastAPI, PostgreSQL, and a Next.js dashboard.",
+      "Built an agent observability and verification system that records execution, traces failures, and forks runs from the failing step with sandboxed tool calls to test a fix. It spans a Python SDK, FastAPI/PostgreSQL backend, and Next.js debugging dashboard.",
     techStack: [
-      "Python",
+      "Python SDK",
       "FastAPI",
       "PostgreSQL",
       "Next.js",
-      "TypeScript",
-      "AI evaluation",
-      "Docker",
+      "Agent observability",
+      "Replay & verification",
     ],
     githubUrl: "https://github.com/anusbutt/agent-replay",
     websiteUrl: "https://agent-replay-phi.vercel.app/",
   },
+];
+
+export const moreProjects: Project[] = [
   {
     name: "Prospector",
     problem:
       "AI-assisted research and outreach can fabricate details or act before a human has reviewed the result.",
     description:
-      "Built a Python CLI that researches public company sources, scores evidence deterministically, produces citation-validated drafts, and sends only human-approved notes. Safety guarantees, dry-run defaults, and duplicate-send protection are enforced in code and tests.",
-    techStack: [
-      "Python CLI",
-      "AI tool use",
-      "Evidence validation",
-      "Human approval",
-      "API integrations",
-      "Testing",
-    ],
+      "An evidence-grounded Python CLI for company research, citation-validated drafting, and approval-gated outreach.",
+    techStack: ["Python CLI", "AI tool use", "Evidence validation", "Human approval"],
     githubUrl: "https://github.com/anusbutt/Prospector",
-  },
-  {
-    name: "Commit Voice",
-    problem:
-      "Turning shipped code into accurate, reviewable release content is repetitive and prone to unsupported claims.",
-    description:
-      "Built a Next.js application that ingests GitHub commits on a schedule, generates drafts from verified commit details, stores review state in PostgreSQL, and publishes approved posts through platform APIs. Includes authentication, a review dashboard, and Vercel deployment.",
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "AI agents",
-      "GitHub API",
-      "Authentication",
-      "Vercel",
-    ],
-    githubUrl: "https://github.com/anusbutt/commit-voice",
   },
 ];
