@@ -1,9 +1,0 @@
-[
-  {
-    "id": "portfolio_project_section",
-    "type": "component",
-    "aliases": ["Selected Work", "Projects section"],
-    "source_docs": ["evidence/portfolio-project-hierarchy.txt#L1-L12"],
-    "first_seen": "2026-08-12T23:20:15Z"
-  }
-]
