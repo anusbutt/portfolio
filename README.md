@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Anus Butt Portfolio
 
-## Getting Started
+Personal portfolio for Anus Butt, an AI engineer and full-stack engineer building auditable agent systems, developer tools, and production web applications.
 
-First, run the development server:
+Live site: https://anusbutt.com
+
+## Architecture
+
+This is a server-first Next.js App Router application.
+
+- `src/app` contains the page, layout, metadata routes, and contact route.
+- `src/components` contains server-rendered sections plus small client islands for navigation, the form, and the custom cursor.
+- `src/content` is the canonical typed source for profile, projects, skills, socials, and education.
+- `src/server` contains the contact validation, in-memory abuse limiter, application function, and Resend adapter.
+- `tests` contains Playwright browser and API acceptance checks.
+
+The refactor preserves the existing dark editorial visual identity and project hierarchy. Unused React Three Fiber/Three packages were removed because the current portfolio does not render a 3D scene.
+
+## Stack
+
+Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion, Resend, and Playwright.
+
+## Local setup
+
+Requirements: Node.js 20.9 or newer and npm.
+
+```bash
+npm ci
+cp .env.example .env.local
+npm run dev
+```
+
+On PowerShell, copy the environment file with:
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+The contact form remains safe but unavailable until the Resend variables are configured. The sender must be verified with Resend.
+
+## Environment variables
+
+- `NEXT_PUBLIC_SITE_URL` — canonical public site URL.
+- `RESEND_API_KEY` — server-only Resend API key.
+- `CONTACT_FROM_EMAIL` — verified Resend sender address.
+- `CONTACT_TO_EMAIL` — fixed portfolio inbox destination.
+
+Never expose `RESEND_API_KEY` to client code or commit `.env.local`.
+
+## Commands
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run lint
+npm run typecheck
+npm run test:e2e
+npm run check
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run check` runs lint, typecheck, and the production build. Playwright starts the local app on port 3100 for browser tests.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deploy the repository to Vercel with the four environment variables configured in the project settings. Pushes to the main branch can use the included GitHub Actions checks as the merge gate. The contact limiter is intentionally an in-memory, per-instance guard suitable for low-volume portfolio traffic; a managed limiter would be the next step if abuse volume grows.
 
-## Learn More
+## Contributing and security
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Small fixes should preserve the current visual identity, accessibility, strict typing, and server/client boundaries. See `CONTRIBUTING.md` for the lightweight contribution workflow and `SECURITY.md` for reporting vulnerabilities.
