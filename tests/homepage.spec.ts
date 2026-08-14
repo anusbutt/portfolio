@@ -42,6 +42,15 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
     await expect(menuButton).toHaveAttribute("aria-expanded", "false");
   }
 
+  const highlightsHeading = page.getByRole("heading", {
+    name: "The signal behind the work.",
+  });
+  await highlightsHeading.scrollIntoViewIfNeeded();
+  await expect(highlightsHeading).toBeVisible();
+  await expect(page.locator("#highlights article")).toHaveCount(8);
+  await expect(page.locator("#highlights")).toContainText("Open Source");
+  await expect(page.locator("#highlights")).toContainText("GraphKeeper + Omniveer");
+
   const projectsHeading = page.getByRole("heading", {
     name: "AI systems, built end to end.",
   });

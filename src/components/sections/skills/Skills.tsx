@@ -6,7 +6,7 @@ export default function Skills() {
     <section id="skills" className="border-b border-white/[0.07] bg-surface px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow="03 / Core stack"
+          eyebrow="04 / Core stack"
           title="The tools behind the work."
           description="A focused stack reflected in the projects above—not a catalogue of generic capabilities."
         />
