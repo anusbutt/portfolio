@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-accent/[0.06] blur-[120px]" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow="05 / Contact"
+          eyebrow="06 / Contact"
           title="Looking for an AI or full-stack engineer?"
           description="I am open to AI Engineer and Full-stack Engineer opportunities, as well as thoughtful open-source and technical collaborations."
         />

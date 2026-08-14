@@ -29,7 +29,7 @@ export default function About() {
     <section id="about" className="border-b border-white/[0.07] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          eyebrow="02 / About"
+          eyebrow="03 / About"
           title="Engineering across the AI and product stack."
           description="I work from system behavior and trust boundaries through APIs, data, interfaces, tests, and deployment."
         />
