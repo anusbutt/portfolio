@@ -30,22 +30,14 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    name: "TaskMate",
+    name: "Irha Beauty",
     problem:
-      "Task apps still make users translate intent into manual form and list operations.",
+      "Beauty brands need an elegant storefront that turns product discovery into effortless checkout.",
     description:
-      "Built a full-stack AI task manager where authenticated users create, update, complete, and delete tasks through natural language. A Next.js client and FastAPI/PostgreSQL backend orchestrate an AI agent whose MCP tools execute scoped task actions.",
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "FastAPI",
-      "PostgreSQL",
-      "JWT auth",
-      "AI agents",
-      "MCP tools",
-    ],
-    githubUrl: "https://github.com/anusbutt/taskmate",
-    websiteUrl: "https://evolution-of-todo-coral.vercel.app/",
+      "Built and shipped a full-stack e-commerce experience for Irha Beauty with category browsing, product detail pages, cart, wishlist, and account flows, all in a refined nature-inspired design.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "E-commerce"],
+    websiteUrl: "https://www.irhapk.com",
+    websiteLabel: "View site",
   },
   {
     name: "Omniveer Duct Lead Qualifier",
@@ -103,6 +95,24 @@ export const projects: Project[] = [
 ];
 
 export const moreProjects: Project[] = [
+  {
+    name: "TaskMate",
+    problem:
+      "Task apps still make users translate intent into manual form and list operations.",
+    description:
+      "Built a full-stack AI task manager where authenticated users create, update, complete, and delete tasks through natural language. A Next.js client and FastAPI/PostgreSQL backend orchestrate an AI agent whose MCP tools execute scoped task actions.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "JWT auth",
+      "AI agents",
+      "MCP tools",
+    ],
+    githubUrl: "https://github.com/anusbutt/taskmate",
+    websiteUrl: "https://evolution-of-todo-coral.vercel.app/",
+  },
   {
     name: "Prospector",
     problem:

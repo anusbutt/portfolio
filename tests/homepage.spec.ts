@@ -61,7 +61,7 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
     .allTextContents();
   expect(projectNames).toEqual([
     "GraphKeeper",
-    "TaskMate",
+    "Irha Beauty",
     "Omniveer Duct Lead Qualifier",
     "RAG-Powered Interactive Robotics Textbook",
     "Agent Replay",
@@ -78,7 +78,7 @@ test("homepage positioning and responsive layout", async ({ page }, testInfo) =>
   await expect(page.getByText("More projects", { exact: true })).toBeVisible();
   await expect(
     page.locator('#projects article[data-project-tier="more"] h3'),
-  ).toHaveText("Prospector");
+  ).toHaveText(["TaskMate", "Prospector"]);
   await expect(page.getByText("Nestaro Pilot", { exact: true })).toHaveCount(0);
   await page.screenshot({ path: testInfo.outputPath("projects.png"), fullPage: true });
 
