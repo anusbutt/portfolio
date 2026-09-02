@@ -64,6 +64,6 @@ npm run check
 
 Deploy the repository to Vercel with the four environment variables configured in the project settings. Pushes to the default branch can use the included GitHub Actions checks as the merge gate. The contact limiter is intentionally an in-memory, per-instance guard suitable for low-volume portfolio traffic; a managed limiter would be the next step if abuse volume grows.
 
-## Contributing and security
+## Contribution policy and security
 
-Small fixes should preserve the current visual identity, accessibility, strict typing, and server/client boundaries. See `CONTRIBUTING.md` for the lightweight contribution workflow and `SECURITY.md` for reporting vulnerabilities.
+This repository is public so its source code and engineering work can be reviewed. It is not accepting issues, pull requests, or other code contributions. For private vulnerability reports, see `SECURITY.md`.
